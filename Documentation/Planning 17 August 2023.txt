@@ -30,3 +30,5 @@ Add phone_book:
 -phone_book_name
 
 
+What if the person had more than 1 number? For example, a person could have a work, home, mobile and travel number, what could be done then? Maybe another table can be created using their name as a key. 
+
