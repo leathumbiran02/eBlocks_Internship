@@ -1,0 +1,32 @@
+Requirements:
+
+-github repository with source code.
+-tech stack: JavaScript (selected framework such as Node.js, React, Vue.js, Angular, Ember.js), JSON - backend (database), CSS
+-showcase the application (online)
+-review the application
+-time to work on application: 17 August - 20 August 2023
+-example to look at for reference: http://phonebooks.z1.web.core.windows.net/
+-formatting of the numbers must be: 081-365-9535
+
+
+Rough idea of how the database works:
+
+Phone_book table:
+phone_book_name - primary key
+full_name 
+phone_numbers - unique
+
+The SQL can work as follows:
+
+Search function:
+-search for phone_book_name AND (name OR number)
+
+Add person:
+-phone_book_name
+-full_name
+-phone_numbers
+
+Add phone_book:
+-phone_book_name
+
+
