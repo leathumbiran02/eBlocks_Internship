@@ -32,3 +32,7 @@ Add phone_book:
 
 What if the person had more than 1 number? For example, a person could have a work, home, mobile and travel number, what could be done then? Maybe another table can be created using their name as a key. 
 
+Resources used:
+1.) https://blog.hubspot.com/website/javascript-frameworks#:~:text=Popular%20JavaScript%20Frameworks%201%201.%20Node.js%202%202.,3.%20Vue.js%204%204.%20Angular%205%205.%20Ember.js
+
+
