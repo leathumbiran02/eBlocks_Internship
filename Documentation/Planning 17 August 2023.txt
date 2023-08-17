@@ -19,7 +19,7 @@ phone_numbers - unique
 The SQL can work as follows:
 
 Search function:
--search for phone_book_name AND (name OR number)
+-search for phone_book_name AND (full_name OR phone_numbers)
 
 Add person:
 -phone_book_name
@@ -30,9 +30,20 @@ Add phone_book:
 -phone_book_name
 
 
-What if the person had more than 1 number? For example, a person could have a work, home, mobile and travel number, what could be done then? Maybe another table can be created using their name as a key. 
+What if the person had more than 1 phone number? For example, a person could have a work, home, mobile and travel number, what could be done then? Maybe another table can be created using their full name as a key. 
 
 Resources used:
 1.) https://blog.hubspot.com/website/javascript-frameworks#:~:text=Popular%20JavaScript%20Frameworks%201%201.%20Node.js%202%202.,3.%20Vue.js%204%204.%20Angular%205%205.%20Ember.js
-
-
+2.) https://www.w3schools.com/react/react_getstarted.asp
+3.) https://www.howtogeek.com/659411/how-to-change-directories-in-command-prompt-on-windows-10/
+4.) https://bobbyhadz.com/blog/npm-err-code-enoent-syscall-open
+5.) https://create-react-app.dev/docs/getting-started/
+6.) https://stackoverflow.com/questions/70009943/how-to-run-npx-node-js-command-on-windows
+7.) https://nodejs.org/en
+8.) https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
+9.) https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_getting_started
+10.) https://react.dev/learn/installation
+11.) https://stackoverflow.com/questions/71746472/node-js-installation-stuck-in-power-shell
+12.) https://stackoverflow.com/questions/67171333/error-when-installing-necessary-packages-on-node-js
+13.)https://www.reddit.com/r/node/comments/9x5ksp/nodejs_installation_on_windows_stuck_what_do_i_do/
+14.) https://www.reddit.com/r/chocolatey/comments/mv87qb/windows_powershell_stopped_during_installhow_do_i/
