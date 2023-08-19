@@ -1,5 +1,4 @@
 Requirements:
-
 -github repository with source code.
 -tech stack: JavaScript (selected framework such as Node.js, React, Vue.js, Angular, Ember.js), JSON - backend (database), CSS
 -showcase the application (online)
@@ -55,7 +54,7 @@ Resources used:
 16.) https://youtu.be/SqcY0GlETPk?si=G5iEWeu2LF1N9je1
 
 
-React notes:
+REACT NOTES:
 npm start - starts the development server
 npx create-react-app app-name - creates the react-app-folder
 node_modules folder: 3rd party libraries such as React are installed.
@@ -64,7 +63,7 @@ src: source folder which contains the source code of the application. We start o
 index.js: a basic template that is bundled with the project folder the first time it is created. It has an id of root which is the container for the application. Then there is a script element below that references /src/main.js which is the entry point of the application. 
 package.json: this folder contains information about the project. Such as the name, its version, script, the list of dependencies, and development dependencies (which are not being deployed with the application in the future.) 
 
-Creating a react component:
+CREATING A REACT COMPONENT:
 -create a new file in the src folder and name it for example page_1.js
 -create a function based react component (it is recommended for new projects.)
 -class components can be used alternatively.

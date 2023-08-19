@@ -16,13 +16,15 @@ function AddPhoneBook(){
                 <h1>Add New Phone Book</h1> {/* Heading of the page: */}
             </div>
 
-            <div class="field-group">
-                <input type="text" name="phone_book_name" id="phone_book_name" class="input-field" placeholder="Phone Book Name" autocomplete="off"></input> {/* Input field for phone book name: */}
-                <label for="phone_book_name" class="input-label">Phone Book Name</label>
+            <div class="center-headings">
+                <div class="field-group">
+                    <input type="text" name="phone_book_name" id="phone_book_name" class="input-field" placeholder="Phone Book Name" autocomplete="off"></input> {/* Input field for phone book name: */}
+                    <label for="phone_book_name" class="input-label">Phone Book Name</label>
 
-                <div class="button-group">
-                    <input type="submit" name="submit" value="save" class="save-button"></input>
-                    <a href="/" class="cancel-button">cancel</a>
+                    <div class="button-group">
+                        <input type="submit" name="submit" value="save" class="save-button"></input>
+                        <a href="/" class="cancel-button">cancel</a>
+                    </div>
                 </div>
             </div>
         </div>
