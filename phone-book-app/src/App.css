@@ -1,3 +1,10 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+}
+
 body{
   margin-top: 100px; /* Specifying where the body will start on the page: */
   background-color:rgb(255, 255, 255); /* Background colour of the body is set to white: */
@@ -13,6 +20,7 @@ header{
   align-items: center;
   justify-content: space-between;
   z-index: 1000;
+  filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.5));
 }
 
 header .navbar ul{
@@ -26,7 +34,7 @@ header .navbar ul li{
 
 header .navbar ul li a{
   font-size: 25px;
-  padding:20px;
+  padding:28px;
   color: #ffffff; /* Colour of the navbar headings are set to white: */
   display: block;
   font-weight: bolder;
@@ -37,5 +45,91 @@ header .navbar ul li a{
   height: calc(100vh - 18.5px);
   display: flex;
   justify-content: center;
-  align-items: center;
+}
+
+.field-group{
+  margin-top: 30px;
+  width: 600px;
+  position: relative;
+  padding-top: 15px;
+}
+
+.input-field{
+  width:100%;
+  outline: 0;
+  border: 0;
+  border-bottom: 2px solid grey; /* The bottom border is set to lightgrey by default: */
+  padding: 10px 0;
+  background: transparent;
+  font-size: 2em;
+  color: black;
+  transition: 0.3s ease;
+}
+
+.input-field:hover{
+  border-bottom: 3px solid black; /* On hover, change the bottom border to black: */
+}
+
+.input-label{
+  display:block;
+  position: absolute;
+  top:0;
+  font-size: 1em;
+  color: gray;
+  text-transform:none;
+  transition: 0.3s ease;
+}
+
+.input-field::placeholder{
+  color: transparent;
+}
+
+.input-field:placeholder-shown ~ .input-label{
+  font-size:2em;
+  top:20px;
+}
+
+.input-field:focus{
+  border-image: linear-gradient(to right, rgb(25,118,210), rgb(108, 182, 255));
+  border-image-slice: 1;
+}
+
+.input-field:focus ~ .input-label{
+  display:block;
+  position: absolute;
+  top: 0;
+  font-size:1em;
+  color: rgb(25, 118, 210);
+}
+
+h1{
+  font-weight: 400;
+  font-size: 3rem;
+  line-height: 1.235;
+  letter-spacing: 0.00735em;
+}
+
+.center-headings{
+  text-align: center;
+}
+
+.save-button{
+  margin-top:20px;
+  padding: 10px 20px;
+  font-size: 20px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  background-color: rgb(25, 118, 210);
+  color: white;
+}
+
+.cancel-button{
+  margin-top:20px;
+  padding: 10px 20px;
+  font-size: 20px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  background-color: rgb(211,47,47);
+  color: white;
+  text-decoration: none; /* Used to hide the line under the word cancel: */
 }

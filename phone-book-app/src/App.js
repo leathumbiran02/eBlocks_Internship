@@ -35,7 +35,7 @@ function App() {
           {/* Calling the Navbar component: */}
           <Navbar/>
         </header>
-
+        
         <div class="hero">
           {/* Calling the Component based on its case from the switch statement above: */}
           <Component/>
