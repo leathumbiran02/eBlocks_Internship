@@ -77,3 +77,9 @@ json-server is an npm(Node Package Manager) module, used for creating a mock RES
 
 npm install -g json-server : used to install json server
 
+USING JSON SERVER:
+create a file called db.json and add the table and its details.
+save the file.
+open command prompt as administrator and locate the project folder, mine was: C:\xampp\htdocs\eBlocks_Internship\phone-book-app\src
+type the following: json-server db.json
+then open a webpage on: http://localhost:3000
