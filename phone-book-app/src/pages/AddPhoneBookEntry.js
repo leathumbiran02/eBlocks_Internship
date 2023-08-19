@@ -24,6 +24,11 @@ function AddPhoneBookEntry(){
                 <input type="text" name="number" id="number" class="input-field" placeholder="number" autocomplete="off"></input> {/* Input field for a person's phone number: */}
                 <label for="number" class="input-label">Number</label>
             </div>
+
+            <div class="button-group">
+                <input type="submit" name="submit" value="save" class="save-button"></input>
+                <a href="/" class="cancel-button">cancel</a>
+            </div>
         </div>
     );
 }

@@ -15,10 +15,15 @@ export default function SearchPhone(){
             <div class="center-headings">
             <h1>Search In Phone Book</h1> {/* Heading of the page: */}
             </div>
-            
+
             <div class="field-group">
                 <input type="text" name="filter" id="filter" class="input-field" placeholder="Filter" autocomplete="off"></input> {/* Input field for entering a value to filter by: */}
                 <label for="filer" class="input-label">Filter</label>
+            </div>
+
+            <div class="button-group">
+                <input type="submit" name="submit" value="search" class="save-button"></input>
+                <a href="/" class="cancel-button">cancel</a>
             </div>
         </div>
 

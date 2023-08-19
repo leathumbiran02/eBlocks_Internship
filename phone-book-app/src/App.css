@@ -52,6 +52,7 @@ header .navbar ul li a{
   width: 600px;
   position: relative;
   padding-top: 15px;
+ 
 }
 
 .input-field{
@@ -113,23 +114,30 @@ h1{
   text-align: center;
 }
 
-.save-button{
+.save-button, .cancel-button{
+  text-align: center;
   margin-top:20px;
   padding: 10px 20px;
   font-size: 20px;
   text-transform: uppercase;
   border-radius: 5px;
+}
+
+.save-button{
   background-color: rgb(25, 118, 210);
   color: white;
 }
 
 .cancel-button{
-  margin-top:20px;
-  padding: 10px 20px;
-  font-size: 20px;
-  text-transform: uppercase;
-  border-radius: 5px;
   background-color: rgb(211,47,47);
   color: white;
   text-decoration: none; /* Used to hide the line under the word cancel: */
+}
+
+.button-group{
+  display: flex;
+  margin-top: 20px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
 }
