@@ -1,5 +1,7 @@
+import React, {useState} from 'react'; 
+import phoneBookData from '../db.json'; /*  .. is added to navigate up one level to locate the db.json file: */
 
-function AddPhoneBookEntry(){
+export default function AddPhoneBookEntry(){
 
     /* Function of this page:
 
@@ -8,6 +10,11 @@ function AddPhoneBookEntry(){
         -Do relevant styling
 
     */
+
+    const [selectedPhoneBook, setSelectedPhoneBook] = useState('');
+
+    const phoneBookNames = phoneBookData.phone_book.map(entry => entry.phone_book_name);
+
     return(
         <div>
             <div class="spacing" style={{ marginTop:'100px' }}></div> {/* Added a div to push the content down on the page:  */}
@@ -17,10 +24,13 @@ function AddPhoneBookEntry(){
             </div>
 
             <div class="center-headings">
-                <select id="dropdown" class="dropdown"> 
+                <select id="dropdown" className="dropdown" value={selectedPhoneBook} onChange={e => setSelectedPhoneBook(e.target.value)}> 
                     <option value="" disabled selected>Select Phone Book</option>
-                    <option>test1</option>
-                    <option>test1</option>
+                    {phoneBookNames.map(name => (
+                        <option key={name} value={name}>
+                            {name}
+                        </option>
+                    ))}
                 </select>
             </div>
 
@@ -42,5 +52,3 @@ function AddPhoneBookEntry(){
         </div>
     );
 }
-
-export default AddPhoneBookEntry;

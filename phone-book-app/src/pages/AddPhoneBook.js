@@ -44,16 +44,16 @@ function AddPhoneBook(){
                 })
                 .then((response) => response.json())
                 .then((data) =>{
-                    alert(`${phoneBookName} Phone Book Was Added!`);
+                    alert(`${phoneBookName} Phone Book Was Added!`); /* Display an alert message if the phone book name was saved: */
                     /* Clear the data in the text box: */
                     setPhoneBookName('');
                 })
                 .catch((error) =>{
-                    alert('Phone Book Could Not Be Added! Please Try Again!');
+                    alert('Phone Book Could Not Be Added! Please Try Again!'); /* Display an alert message if the phone book name failed to save: */
                 });
             })
             .catch((error) =>{
-                alert('Could Not Fetch The Phone Books! Please Try Again!');
+                alert('Could Not Fetch The Phone Books! Please Try Again!'); /* Display an alert message if the ids of the phone book names could not be fetched, this could indicate that the JSON server was down: */
             })
         }
     };
@@ -70,7 +70,7 @@ function AddPhoneBook(){
                 <div class="field-group">
                     <input type="text" name="phone_book_name" id="phone_book_name" class="input-field" placeholder="Phone Book Name" autocomplete="off" value={phoneBookName} onChange={(e) => setPhoneBookName(e.target.value)} /> {/* Input field for phone book name: */}
                     
-                    <label htmlFor="phone_book_name" class="input-label">Phone Book Name</label>
+                    <label htmlFor="phone_book_name" class="input-label">Phone Book Name</label> {/* Text that appears inside the textbox: */}
 
                     <div class="button-group">
                         {/* Save button: */}
