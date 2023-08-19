@@ -1,0 +1,55 @@
+{
+    "phone_book":[
+        {
+            "id":1,
+            "phone_book_name":"Eduvos"
+        },
+        {
+            "id":2,
+            "phone_book_name":"eBlocks Software"
+        },
+        {
+            "id":3,
+            "phone_book_name":"Home"
+        },
+        {
+            "id":4,
+            "phone_book_name":"Work"
+        },
+        {
+            "id":5,
+            "phone_book_name":"School"
+        }
+        
+    ],
+
+    "phone_book_details":[
+        {
+            "id":1,
+            "phone_book_id":1,
+            "full_name":"Lea Thumbiran"
+        },
+        {
+            "id":2,
+            "phone_book_id":2,
+            "full_name":"John Smith"
+        },
+        {
+            "id":3,
+            "phone_book_id":3,
+            "full_name":"Junita Govender"
+        },
+        {
+            "id":4,
+            "phone_book_id":3,
+            "full_name":"Leigh Thomas"
+        },
+        {
+            "id":5,
+            "phone_book_id":1,
+            "full_name":"Dylan Coetzee"
+        }
+        
+    ]
+
+}

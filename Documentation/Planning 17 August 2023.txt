@@ -52,6 +52,7 @@ Resources used:
 14.) https://www.reddit.com/r/chocolatey/comments/mv87qb/windows_powershell_stopped_during_installhow_do_i/
 15.) https://youtu.be/SLfhMt5OUPI?si=Hdo3tOK1w1y3YEqF
 16.) https://youtu.be/SqcY0GlETPk?si=G5iEWeu2LF1N9je1
+17.) https://www.geeksforgeeks.org/json-server-setup-and-introduction/
 
 
 REACT NOTES:
@@ -70,3 +71,9 @@ CREATING A REACT COMPONENT:
 -save the file and go to App.js
 -remove the contents of the App.js file
 -import the new react component at the top and call it in the App function. Save the file.
+
+DOWNLOADING JSON SERVER:
+json-server is an npm(Node Package Manager) module, used for creating a mock REST API effortlessly. Data is transferred in JSON(JavaScript Object Notation) format between client and server.
+
+npm install -g json-server : used to install json server
+
