@@ -11,10 +11,14 @@ Requirements:
 
 Rough idea of how the database works:
 
-Phone_book table:
-phone_book_name - primary key
+phone_book_details table:
+phone_book_name - foreign key
 full_name 
 phone_numbers - unique
+
+
+phone_books table:
+phone_book_name - primary key
 
 The SQL can work as follows:
 
@@ -26,7 +30,7 @@ Add person:
 -full_name
 -phone_numbers
 
-Add phone_book:
+Add phone_books:
 -phone_book_name
 
 
@@ -47,3 +51,23 @@ Resources used:
 12.) https://stackoverflow.com/questions/67171333/error-when-installing-necessary-packages-on-node-js
 13.)https://www.reddit.com/r/node/comments/9x5ksp/nodejs_installation_on_windows_stuck_what_do_i_do/
 14.) https://www.reddit.com/r/chocolatey/comments/mv87qb/windows_powershell_stopped_during_installhow_do_i/
+15.) https://youtu.be/SLfhMt5OUPI?si=Hdo3tOK1w1y3YEqF
+16.) https://youtu.be/SqcY0GlETPk?si=G5iEWeu2LF1N9je1
+
+
+React notes:
+npm start - starts the development server
+npx create-react-app app-name - creates the react-app-folder
+node_modules folder: 3rd party libraries such as React are installed.
+public folder: public assets of the website exist such as images, video files etc.
+src: source folder which contains the source code of the application. We start off with a component called App.js
+index.js: a basic template that is bundled with the project folder the first time it is created. It has an id of root which is the container for the application. Then there is a script element below that references /src/main.js which is the entry point of the application. 
+package.json: this folder contains information about the project. Such as the name, its version, script, the list of dependencies, and development dependencies (which are not being deployed with the application in the future.) 
+
+Creating a react component:
+-create a new file in the src folder and name it for example page_1.js
+-create a function based react component (it is recommended for new projects.)
+-class components can be used alternatively.
+-save the file and go to App.js
+-remove the contents of the App.js file
+-import the new react component at the top and call it in the App function. Save the file.
