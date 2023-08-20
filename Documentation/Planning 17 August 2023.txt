@@ -49,6 +49,9 @@ RESOURCES USED:
 15.) https://youtu.be/SLfhMt5OUPI?si=Hdo3tOK1w1y3YEqF
 16.) https://youtu.be/SqcY0GlETPk?si=G5iEWeu2LF1N9je1
 17.) https://www.geeksforgeeks.org/json-server-setup-and-introduction/
+18.) https://dev.to/derick1530/introduction-to-json-server-beginner-part-i-4l2g
+19.) https://www.npmjs.com/package/json-server
+20.) https://create-react-app.dev/docs/making-a-progressive-web-app/
 
 
 REACT NOTES:
