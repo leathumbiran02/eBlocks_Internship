@@ -49,11 +49,11 @@ function AddPhoneBook(){
                     setPhoneBookName('');
                 })
                 .catch((error) =>{
-                    alert('Phone Book Could Not Be Added! Please Try Again!'); /* Display an alert message if the phone book name failed to save: */
+                    alert('Phone Book Could Not Be Added!\nPlease Try Again!'); /* Display an alert message if the phone book name failed to save: */
                 });
             })
             .catch((error) =>{
-                alert('Could Not Fetch The Phone Books! Please Try Again!'); /* Display an alert message if the ids of the phone book names could not be fetched, this could indicate that the JSON server was down: */
+                alert('Could Not Fetch The Phone Books!\nPlease Try Again!'); /* Display an alert message if the ids of the phone book names could not be fetched, this could indicate that the JSON server was down: */
             })
         }
     };

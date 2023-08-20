@@ -11,9 +11,67 @@ export default function AddPhoneBookEntry(){
 
     */
 
+    /* State to track the selected phone book name, name and phone number: */
     const [selectedPhoneBook, setSelectedPhoneBook] = useState('');
+    const [name, setName] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
 
+    /* Retrieving phone book names from the database: */
     const phoneBookNames = phoneBookData.phone_book.map(entry => entry.phone_book_name);
+
+    /* Function to handle when the save button is clicked: */
+    const handleSave = () => {
+        if (selectedPhoneBook && name && phoneNumber) {
+            const selectedPhoneBookEntry = phoneBookData.phone_book.find(entry => entry.phone_book_name === selectedPhoneBook);
+    
+            if (selectedPhoneBookEntry) {
+                // Filter the phone book details for the selected phone book:
+                const selectedPhoneBookDetails = phoneBookData.phone_book_details.filter(entry => entry.phone_book_id === selectedPhoneBookEntry.id);
+    
+                // Check if the phone number already exists in the selected phone book details:
+                const phoneNumberExists = selectedPhoneBookDetails.some(entry => entry.phone_number === phoneNumber);
+    
+                if (phoneNumberExists) {
+                    // Phone number exists in the selected phone book, display an error message:
+                    alert('This Phone Number Is Already Saved To Another Contact!\nPlease Try Again!');
+                } else {
+                    // Phone number does not exist in the selected phone book, proceed with saving the new entry:
+                    const newEntry = {
+                        id: phoneBookData.phone_book_details.length + 1,
+                        phone_book_id: selectedPhoneBookEntry.id,
+                        full_name: name,
+                        phone_number: phoneNumber
+                    };
+    
+                    // Update the database with the new entry using fetch:
+                    fetch('http://localhost:3000/phone_book_details', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(newEntry)
+                    })
+                        .then(response => response.json())
+                        .then(updatedData => {
+                            // Data was inserted successfully, display an alert message:
+                            alert('New Entry Was Added!');
+                            setName('');
+                            setPhoneNumber('');
+                        })
+                        .catch(error => {
+                            // Failed to add, display an alert message:
+                            alert('Failed To Add! Please try again!');
+                        });
+                }
+            } else {
+                // Phone book name was not found, display an alert message:
+                alert('Selected Phone Book Was Not Found.');
+            }
+        } else {
+            // Any of the fields are left empty, display an error alert message:
+            alert('Fields Cannot Be Left Empty!');
+        }
+    };   
 
     return(
         <div>
@@ -36,17 +94,19 @@ export default function AddPhoneBookEntry(){
 
             <div class="center-headings">
                 <div class="field-group">
-                    <input type="text" name="name" id="name" class="input-field" placeholder="Name" autocomplete="off"></input> {/* Input field for a person's name: */}
+                    <input type="text" name="name" id="name" class="input-field" placeholder="Name" autocomplete="off" value={name} onChange={e => setName(e.target.value)}></input> {/* Input field for a person's name: */}
                     <label for="name" class="input-label">Name</label>
                 </div>
                 <div class="field-group">
-                    <input type="text" name="number" id="number" class="input-field" placeholder="number" autocomplete="off"></input> {/* Input field for a person's phone number: */}
+                    <input type="text" name="number" id="number" class="input-field" placeholder="number" autocomplete="off" value={phoneNumber} onChange={e => setPhoneNumber(e.target.value)}></input> {/* Input field for a person's phone number: */}
                     <label for="number" class="input-label">Number</label>
                 </div>
             </div>
 
             <div class="button-group">
-                <input type="submit" name="submit" value="save" class="save-button"></input>
+                {/* Save button: */}
+                <button onClick={handleSave} className="save-button">Save</button>
+                {/* Cancel button: */}
                 <a href="/" class="cancel-button">cancel</a>
             </div>
         </div>
