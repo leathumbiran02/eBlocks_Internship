@@ -1,6 +1,6 @@
 Requirements:
 -github repository with source code.
--tech stack: JavaScript (selected framework such as Node.js, React, Vue.js, Angular, Ember.js), JSON - backend (database), CSS
+-tech stack: JavaScript (selected framework React), JSON - backend (database), CSS
 -showcase the application (online)
 -review the application
 -time to work on application: 17 August - 20 August 2023

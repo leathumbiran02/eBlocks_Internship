@@ -30,31 +30,31 @@
       "id": 1,
       "phone_book_id": 1,
       "full_name": "Lea Thumbiran",
-      "phone_number": "123456789"
+      "phone_number": "123-456-7890"
     },
     {
       "id": 2,
       "phone_book_id": 2,
       "full_name": "John Smith",
-      "phone_number": "987654321"
+      "phone_number": "987-654-3211"
     },
     {
       "id": 3,
       "phone_book_id": 3,
       "full_name": "Junita Govender",
-      "phone_number": "23456712"
+      "phone_number": "234-567-1256"
     },
     {
       "id": 4,
       "phone_book_id": 3,
       "full_name": "Leigh Thomas",
-      "phone_number": "9999999999"
+      "phone_number": "999-999-9999"
     },
     {
       "id": 5,
       "phone_book_id": 1,
       "full_name": "Dylan Coetzee",
-      "phone_number": "1111111111"
+      "phone_number": "111-111-1111"
     }
   ]
 }

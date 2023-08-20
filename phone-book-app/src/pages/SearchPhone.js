@@ -22,27 +22,26 @@ export default function SearchPhone(){
     /* Function to handle the searching of contacts: */
     const handleSearch = () => {
         if (selectedPhoneBook && filterText.trim() !== '') {
-            /* Find the selected phone book entry: */
             const selectedPhoneBookEntry = phoneBookData.phone_book.find(entry => entry.phone_book_name === selectedPhoneBook);
             const selectedPhoneBookId = selectedPhoneBookEntry ? selectedPhoneBookEntry.id : null;
-        
-            /* Filter the search results based on the phone book name and the filter text that was entered: */
+    
             const searchResults = phoneBookData.phone_book_details.filter(detail => {
                 const isMatchingPhoneBook = selectedPhoneBookId === null || detail.phone_book_id === selectedPhoneBookId;
-                const isMatchingFilter = 
-                    detail.full_name.toLowerCase().includes(filterText.toLowerCase()) ||
-                    detail.phone_number.toString().includes(filterText);
-        
-                return isMatchingPhoneBook && isMatchingFilter;
+                const phoneNumberWithoutDashes = detail.phone_number.replace(/\D/g, '');
+                const filterTextLower = filterText.toLowerCase();
+    
+                const fullNameLower = detail.full_name.toLowerCase();
+                const phoneNumberMatch = phoneNumberWithoutDashes.includes(filterText);
+    
+                return isMatchingPhoneBook && (fullNameLower.includes(filterTextLower) || phoneNumberMatch);
             });
-        
-            /* If the length of the search results is greater than 0 (if a result was found) display it in an alert box: */
+    
             if (searchResults.length > 0) {
                 alert(`Contact Details:\nFull Name: ${searchResults.map(result => `${result.full_name} \nPhone Number: ${result.phone_number}`).join('\n')}`);
-            } else { /* If the result was not found, display an error message in an alert box: */
+            } else {
                 alert('No Contact Was Found! Please Try Again.');
             }
-        } else { /* If phone book name or filter text is empty, or both display an error message in an alert box: */
+        } else {
             alert('Phone Book Name And Filter Text Cannot Be Empty!');
         }
     };

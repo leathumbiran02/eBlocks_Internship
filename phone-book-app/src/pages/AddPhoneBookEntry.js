@@ -22,25 +22,36 @@ export default function AddPhoneBookEntry(){
     /* Function to handle when the save button is clicked: */
     const handleSave = () => {
         if (selectedPhoneBook && name && phoneNumber) {
+
             const selectedPhoneBookEntry = phoneBookData.phone_book.find(entry => entry.phone_book_name === selectedPhoneBook);
     
             if (selectedPhoneBookEntry) {
+                /* Format the phone number before saving: */
+                const formattedPhoneNumber = phoneNumber.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
+
+                /* If the phone number is not the specified length, display an error alert message an return: */
+                if (formattedPhoneNumber.length !== 12) {
+                    alert('Phone Number Is Too Short!\nPlease Try Again.');
+                    return;
+                }
+
                 // Filter the phone book details for the selected phone book:
                 const selectedPhoneBookDetails = phoneBookData.phone_book_details.filter(entry => entry.phone_book_id === selectedPhoneBookEntry.id);
     
                 // Check if the phone number already exists in the selected phone book details:
-                const phoneNumberExists = selectedPhoneBookDetails.some(entry => entry.phone_number === phoneNumber);
+                const phoneNumberExists = selectedPhoneBookDetails.some(entry => entry.phone_number === formattedPhoneNumber);
     
                 if (phoneNumberExists) {
                     // Phone number exists in the selected phone book, display an error message:
-                    alert('This Phone Number Is Already Saved To Another Contact!\nPlease Try Again!');
+                    alert('This Phone Number Is Already Saved To Another Contact!\nPlease Try Again.');
                 } else {
                     // Phone number does not exist in the selected phone book, proceed with saving the new entry:
+
                     const newEntry = {
                         id: phoneBookData.phone_book_details.length + 1,
                         phone_book_id: selectedPhoneBookEntry.id,
                         full_name: name,
-                        phone_number: phoneNumber
+                        phone_number: formattedPhoneNumber,
                     };
     
                     // Update the database with the new entry using fetch:
