@@ -22,35 +22,46 @@ function AddPhoneBook(){
             fetch('http://localhost:3000/phone_book')
             .then((response) => response.json())
             .then((data) => {
-                /* Fetch the ids of phone books in the table: */
-                const ids = data.map((item) => item.id);
 
-                /* Calculate the next available id to use: */
-                const nextID = Math.max(...ids) + 1;
+                /* Convert the phone book names to lowercase so when comparing it is case insensitive: */
+                const lowerCasePhoneBookName = phoneBookName.toLowerCase();
 
-                /* Create a new phone book object: */
-                const newPhoneBook = {
-                    id: nextID, /* Use the next available id: */
-                    phone_book_name: phoneBookName,
-                };
+                /* Check if the phone book name already exists and convert it to lowercase: */
+                const phoneBookNameExists = data.some(item => item.phone_book_name.toLowerCase() === lowerCasePhoneBookName);
 
-                /* POST the new phone book data to the JSON server: */
-                fetch('http://localhost:3000/phone_book', {
-                    method:'POST',
-                    headers:{
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(newPhoneBook),
-                })
-                .then((response) => response.json())
-                .then((data) =>{
-                    alert(`${phoneBookName} Phone Book Was Added!`); /* Display an alert message if the phone book name was saved: */
-                    /* Clear the data in the text box: */
-                    setPhoneBookName('');
-                })
-                .catch((error) =>{
-                    alert('Phone Book Could Not Be Added!\nPlease Try Again!'); /* Display an alert message if the phone book name failed to save: */
-                });
+                if(phoneBookNameExists){/* Phone book name exists, display an error message: */
+                    alert('Phone Book Name Already Exists! Please Try Again!');
+                }else{
+                    /* Fetch the ids of phone books in the table: */
+                    const ids = data.map((item) => item.id);
+
+                    /* Calculate the next available id to use: */
+                    const nextID = Math.max(...ids) + 1;
+
+                    /* Create a new phone book object: */
+                    const newPhoneBook = {
+                        id: nextID, /* Use the next available id: */
+                        phone_book_name: phoneBookName,
+                    };
+
+                    /* POST the new phone book data to the JSON server: */
+                    fetch('http://localhost:3000/phone_book', {
+                        method:'POST',
+                        headers:{
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(newPhoneBook),
+                    })
+                    .then((response) => response.json())
+                    .then((data) =>{
+                        alert(`${phoneBookName} Phone Book Was Added!`); /* Display an alert message if the phone book name was saved: */
+                        /* Clear the data in the text box: */
+                        setPhoneBookName('');
+                    })
+                    .catch((error) =>{
+                        alert('Phone Book Could Not Be Added!\nPlease Try Again!'); /* Display an alert message if the phone book name failed to save: */
+                    });
+                }
             })
             .catch((error) =>{
                 alert('Could Not Fetch The Phone Books!\nPlease Try Again!'); /* Display an alert message if the ids of the phone book names could not be fetched, this could indicate that the JSON server was down: */
