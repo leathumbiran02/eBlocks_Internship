@@ -1,30 +1,29 @@
-Requirements:
--github repository with source code.
--tech stack: JavaScript (selected framework React), JSON - backend (database), CSS
--showcase the application (online)
--review the application
--time to work on application: 17 August - 20 August 2023
--example to look at for reference: http://phonebooks.z1.web.core.windows.net/
--formatting of the numbers must be: 081-365-9535
+REQUIREMENTS:
+-github repository with source code. (COMPLETE)
+-tech stack: JavaScript (selected framework React), JSON - backend (database), CSS (COMPLETE)
+-showcase the application (online) (PENDING)
+-review the application (PENDING)
+-time to work on application: 17 August - 20 August 2023 (COMPLETE)
+-example to look at for reference: http://phonebooks.z1.web.core.windows.net/ (COMPLETE)
+-formatting of the numbers must be: 081-365-9535 (COMPLETE)
 
 
-Rough idea of how the database works:
+DATABASE LAYOUT:
+phone_books table:
+id
+phone_book_name - primary key
 
 phone_book_details table:
+id
 phone_book_name - foreign key
 full_name 
 phone_numbers - unique
 
-
-phone_books table:
-phone_book_name - primary key
-
-The SQL can work as follows:
-
+HOW THE SQL WILL WORK:
 Search function:
 -search for phone_book_name AND (full_name OR phone_numbers)
 
-Add person:
+Add entry:
 -phone_book_name
 -full_name
 -phone_numbers
@@ -32,10 +31,7 @@ Add person:
 Add phone_books:
 -phone_book_name
 
-
-What if the person had more than 1 phone number? For example, a person could have a work, home, mobile and travel number, what could be done then? Maybe another table can be created using their full name as a key. 
-
-Resources used:
+RESOURCES USED:
 1.) https://blog.hubspot.com/website/javascript-frameworks#:~:text=Popular%20JavaScript%20Frameworks%201%201.%20Node.js%202%202.,3.%20Vue.js%204%204.%20Angular%205%205.%20Ember.js
 2.) https://www.w3schools.com/react/react_getstarted.asp
 3.) https://www.howtogeek.com/659411/how-to-change-directories-in-command-prompt-on-windows-10/
