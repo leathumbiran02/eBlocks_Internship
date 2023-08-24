@@ -62,23 +62,23 @@ export default function AddPhoneBookEntry(){
                         },
                         body: JSON.stringify(newEntry)
                     })
-                        .then(response => response.json())
-                        .then(updatedData => {
-                            // Data was inserted successfully, display an alert message:
-                            alert('New Entry Was Added!');
-                            setName('');
-                            setPhoneNumber('');
-                        })
-                        .catch(error => {
-                            // Failed to add, display an alert message:
-                            alert('Failed To Add! Please try again!');
-                        });
+                    .then(response => response.json())
+                    .then(updatedData => {
+                        // Data was inserted successfully, display an alert message:
+                        alert('New Entry Was Added!');
+                        setName('');
+                        setPhoneNumber('');
+                    })
+                    .catch(error => {
+                        // Failed to add, display an alert message:
+                        alert('Failed To Add! Please try again!');
+                    });
                 }
-            } else {
+            }else{
                 // Phone book name was not found, display an alert message:
                 alert('Selected Phone Book Was Not Found.');
             }
-        } else {
+        }else{
             // Any of the fields are left empty, display an error alert message:
             alert('Fields Cannot Be Left Empty!');
         }
