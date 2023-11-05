@@ -82,4 +82,4 @@ save the file.
 open command prompt as administrator and locate the project folder, mine was: C:\xampp\htdocs\eBlocks_Internship\phone-book-app\src
 type the following: json-server db.json
 then open a webpage on: http://localhost:3000
-Ctrl + C is used to stop the json server.
+Ctrl + C is used to stop the json server
